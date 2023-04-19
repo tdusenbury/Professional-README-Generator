@@ -13,42 +13,113 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Please enter your project description here:'
+        message: 'Please enter your project description.'
     },
     {
-        type: 'input',
+        type: 'confirm',
         name: 'installation',
-        message: 'How do you install this application?',
+        message: 'Is there an installation process?'
     },
     {
         type: 'input',
-        name: 'usage',
-        message: 'How do you use this application?:'
+        name: 'installationSteps',
+        message: 'Please explain how to install your application.',
+        when: ({ confirmInstallation }) => {
+            if (confirmInstallation) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'instructions',
+        message: 'Do you have instructions to use the application?' 
     },
     {
         type: 'input',
-        name: 'contributing',
-        message: 'Who contributed to the development of this application?:'
+        name: 'instructionSteps',
+        message: 'Please state the instructions for how your application is used. Enter descriptive images at a later time.',
+        when: ({ confirmInstructions }) => {
+            if (confirmInstructions) {
+                return true;
+            } else {
+                return false;
+            }
+        } 
+    },
+    {
+        type: 'confirm',
+        name: 'contributors',
+        message: 'Do you want other developers to contribute to this repository?'
     },
     {
         type: 'input',
-        name: 'tests',
-        message: 'Enter information about the testing of this application:'
+        name: 'contributorsHow',
+        message: 'Explain how you want other developer to contribute to this repository?',
+        when: ({ confirmContributors }) => {
+            if (confirmContributors) {
+                return true;
+            } else {
+                return false;
+            }
+        } 
+    },
+    {
+        type: 'confirm',
+        name: 'testing',
+        message: 'Is testing available?'
+    },
+    {
+        type: 'input',
+        name: 'testingHow',
+        message: 'Enter how users can test your application.',
+        when: ({ confirmContributorsHow }) => {
+            if (confirmContributorsHow) {
+                return true;
+            } else {
+                return false;
+            }
+        } 
+    },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Please choose the appropriate license for this application.',
+        choices: ['Apache License 2.0', 'Boost Software License 1.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'MIT License', 'Mozilla Public License 2.0', 'The Unlicense', 'None']
+    },
+    {
+        type: 'input',
+        name: 'userName',
+        message: 'What is your gitHub user name?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?'
+    },
+    {
+        type: 'input',
+        name: 'contact',
+        message: 'How do you wish people to contact you?'
     },
 ]
 
-
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(data)
-        fs.writeFile(fileName, data, function(error) {
-        return console.log(error);
+    //console.log(data)
+    fs.writeFile(fileName, data, error => {
+        if (error) {    
+            return console.log(error);
+        }               
     })
 }
 
 // TODO: Create a function to initialize app (INITIALIZE = init)
+//When given the prompt, questions are asked using the inquirer toolbox. The responses to the questions are then given to the generateMarkdown function on the other file to create the actualPage of information. Then that actualPage will get written to a file, and if that file does not exist beforehand, one will be created.
 function init() {
-    inquirer.prompt (questions)
+    inquirer.prompt(questions)
     .then((response) => {
     //console.log(response);
     const actualPage = generateMarkdown(response)
@@ -57,35 +128,8 @@ function init() {
 }) 
 }
 
-//questions then get responses. then we give those to the generateMarkdown. when it receives it it is called data. "Page" is exactly what we want written. give the "responses" to the writetofile into the "filename", "page".
+//questions then get responses. then we give those to the generateMarkdown. when it receives it it is called data. That data is then "actualPage" is exactly what we want written. give the "responses" to the writetofile into the "filename", "page".
 
 
 // Function call to initialize app
 init();
-
-
-
-
-
-// TODO: Create a function to write README file
-
-
-// function writeToFile(fileName, data) {
-//     const outPutString = `# ${data.title}
-
-//     ## Your Task
-    
-//     When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions&mdash;this last part increases the likelihood that other developers will contribute to the success of the project. 
-    
-//     You can quickly and easily create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
-    
-//     Your task is to create a command-line application that dynamically generates a professional README.md file from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). Review the [Good README Guide](./Good-README-Guide/README.md) as a reminder of everything that a high-quality, professional README should contain. 
-    
-//     The application will be invoked by using the following command:
-    
-//     Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality. Revisit the Screencastify Tutorial in the prework as a refresher on how to record video from your computer. You’ll need to submit a link to the video _and_ add it to the README of your project.`
-// }
-
-//     fs.writeFile('fileName', outPutString, function(error) {
-//     return console.log(error);
-// })
