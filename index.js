@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Please choose the appropriate license for this application.',
-        choices: ['Apache License 2.0','Eclipse', 'ISC', 'MIT License', 'Mozilla Public License 2.0']
+        choices: ['Apache','Eclipse', 'ISC', 'MIT', 'Mozilla']
     },
     {
         type: 'input',
@@ -48,7 +48,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'Email',
+        name: 'email',
         message: 'What is your email address?'
     },
 ]

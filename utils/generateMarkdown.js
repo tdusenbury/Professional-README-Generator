@@ -72,10 +72,12 @@ function generateMarkdown(data) {
 
   If you have any questions about me or this project, please contact me:
   
-    - [**Github**:](https://github.com.${data.userName})
-    - [**Email**:](mailto: ${data.questionsEmail})
+  [**Github**](https://github.com/${data.userName})
+
+  [**Email**](mailto:${data.email})
 
   ## License
+   
  `
 }
 
