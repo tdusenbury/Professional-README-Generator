@@ -16,78 +16,30 @@ const questions = [
         message: 'Please enter your project description.'
     },
     {
-        type: 'confirm',
+        type: 'input',
         name: 'installation',
-        message: 'Is there an installation process?'
+        message: 'Please explain how to install your application.'
     },
     {
         type: 'input',
-        name: 'installationSteps',
-        message: 'Please explain how to install your application.',
-        when: ({ confirmInstallation }) => {
-            if (confirmInstallation) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-    {
-        type: 'confirm',
         name: 'instructions',
-        message: 'Do you have instructions to use the application?' 
+        message: 'Please state the instructions for how your application is used. Enter descriptive images at a later time.'
     },
     {
         type: 'input',
-        name: 'instructionSteps',
-        message: 'Please state the instructions for how your application is used. Enter descriptive images at a later time.',
-        when: ({ confirmInstructions }) => {
-            if (confirmInstructions) {
-                return true;
-            } else {
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'confirm',
         name: 'contributors',
-        message: 'Do you want other developers to contribute to this repository?'
+        message: 'Explain how you want other developers to contribute to this repository.'
     },
     {
         type: 'input',
-        name: 'contributorsHow',
-        message: 'Explain how you want other developer to contribute to this repository?',
-        when: ({ confirmContributors }) => {
-            if (confirmContributors) {
-                return true;
-            } else {
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'confirm',
         name: 'testing',
-        message: 'Is testing available?'
+        message: 'Enter how users can test your application.'
     },
     {
-        type: 'input',
-        name: 'testingHow',
-        message: 'Enter how users can test your application.',
-        when: ({ confirmContributorsHow }) => {
-            if (confirmContributorsHow) {
-                return true;
-            } else {
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Please choose the appropriate license for this application.',
-        choices: ['Apache License 2.0', 'Boost Software License 1.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'MIT License', 'Mozilla Public License 2.0', 'The Unlicense', 'None']
+        choices: ['Apache License 2.0','Eclipse', 'ISC', 'MIT License', 'Mozilla Public License 2.0']
     },
     {
         type: 'input',
@@ -96,13 +48,8 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'email',
+        name: 'Email',
         message: 'What is your email address?'
-    },
-    {
-        type: 'input',
-        name: 'contact',
-        message: 'How do you wish people to contact you?'
     },
 ]
 
