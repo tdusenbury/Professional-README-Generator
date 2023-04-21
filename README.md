@@ -53,16 +53,15 @@ TAMARA "T" DUSENBURY
 ```
     I am excited to take my knowledge of various industries into the virtual realm.
 
-- [**Portfolio**](https://youtu.be/bHX54GCrDB4)
-- [**LinkedIn**](https://www.linkedin.com/in/tamara-dusenbury-02ab8591/)
-- [**Github**](https://github.com/tdusenbury)
-```
-```
+    LinkedIn: Tamara Dusenbury
+    Portfolio: (https://tdusenbury.github.io/Tamara-Dusenbury-Portfolio/)
+    Github: (https://github.com/tdusenbury)
+
 
 
 ## Credits
 
-Shout out to Laurie, Cassie, Afi, Liubov, Kakazi, Bahareh, 
+Shout out to Laurie, Cassie, Afi, Liubov, Kakazi, Bahareh, Victoria, my tutor Katie, the Cohort TA's, and Jerome for your patience and support.
 
 
 ## License
