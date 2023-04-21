@@ -71,7 +71,7 @@ function init() {
     //console.log(response);
     const actualPage = generateMarkdown(response)
     //console.log(page)
-    writeToFile("READMEfile.md", actualPage)
+    writeToFile("READMEgen.md", actualPage)
 }) 
 }
 

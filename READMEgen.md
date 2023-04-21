@@ -1,5 +1,5 @@
 
-  # Enter your title here.
+  # This is the Title
 
 
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -19,19 +19,19 @@
   - [**License**](#license)
 
   ## Description
-  Enter project description here.
+  Describe app here.
 
   ## Installation
-  Here is how to install your application.
+  This is how to install.
 
   ## Usage
-  Here are the instructions.
+  These are the instructions.
 
   ## Contributions
-  Here is how to contribute.
+  This is how to contribute.
 
   ## Testing
-  List how your application can be tested.
+  Testing
 
   ## Questions
   If you have any questions about me or this project, please contact me:
