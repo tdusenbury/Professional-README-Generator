@@ -3,34 +3,45 @@
 
 function renderLicenseBadge(license) { 
   if (license === "Apache") {
-    return `https://img.shields.io/badge/license-${license}-blue`
+    return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
   }
   else if (license === "Eclipse") {
-    return `https://img.shields.io/badge/license-${license}-green`
+    return `![License](https://img.shields.io/badge/License-EPL_1.0-red.svg`
   }
   else if (license === "ISC") {
-    return `https://img.shields.io/badge/license-${license}-yellow`
+    return `![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg`
   }
   else if (license === "MIT") {
-    return `https://img.shields.io/badge/license-${license}-orange`;
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg`;
   } 
   else if (license === "Mozilla") {
-    return `https://img.shields.io/badge/license-${license}-purple`
+    return `![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)`
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  return `https://opensource.org/license/${license}`
+  if(license !== 'None') {
+    return `[License](#license)`
+  } else {
+    return ""
+  }
  }
 
-
+ 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `[![License](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`;
+  if(license !== 'None') {
+    return `## License
+    This application has the ${license} License.`
+  } else {
+    return ""
+  }
 }
+
+// ${renderLicenseLink(license)}
 
 // TODO: Create a function to generate markdown for README
 //This is the 
@@ -40,17 +51,18 @@ function generateMarkdown(data) {
   # ${data.title}
 
 
-  ${renderLicenseSection(data.license)}
-
+  ${renderLicenseBadge(data.license)}
+  
 
   ##Table of Contents
 
-  - [**Description**]
-  - [**Installation**]
-  - [**Usage**]
-  - [**Contribution**]
-  - [**Test**]
-  - [**Questions**]
+  [Description](#description)
+  [Installation](#installation)
+  [Usage](#usage)
+  [Contribution](#contribution)
+  [Test](#test)
+  [Questions](#questions)
+  ${renderLicenseLink(data.license)}
 
   ## Description
   ${data.description}
@@ -68,55 +80,15 @@ function generateMarkdown(data) {
   ${data.testing}
 
   ## Questions
-  ${data.contact}
-
   If you have any questions about me or this project, please contact me:
   
   [**Github**](https://github.com/${data.userName})
 
   [**Email**](mailto:${data.email})
 
-  ## License
-   
+  ${renderLicenseSection(data.license)}
  `
 }
 
-
-
 module.exports = generateMarkdown;
 
-
-// function renderLicenseBadge(license) {
-//   if (licenseOption === 'Apache License 2.0') {
-//     licenseOption = 'ApacheLicense2.0';
-//     licenseLink = 'https://choosealicense.com/licenses/apache-2.0/'
-//   };
-//   if (licenseOption === 'Boost Software License 1.0') {
-//     licenseOption = 'BoostSoftwareLicense1.0';
-//     licenseLink = 'https://choosealicense.com/licenses/bsl-1.0/'
-//   };
-//   if (licenseOption === 'GNU AGPLv3') {
-//     licenseOption = 'GNUAGPLv3';
-//     licenseLink = 'https://choosealicense.com/licenses/agpl-3.0/'
-//   };
-//   if (licenseOption === 'GNU GPLv3') {
-//     licenseOption = 'GNUGPLv3';
-//     licenseLink = 'https://choosealicense.com/licenses/gpl-3.0/'
-//   };
-//   if (licenseOption === 'GNU LGPLv3') {
-//     licenseOption = 'GNULGPLv3';
-//     licenseLink = 'https://choosealicense.com/licenses/lgpl-3.0/'
-//   };
-//   if (licenseOption === 'MIT License') {
-//     licenseOption = 'MITLicense';
-//     licenseLink = 'https://choosealicense.com/licenses/mit/'
-//   };
-//   if (licenseOption === 'Mozilla Public License 2.0') {
-//     licenseOption = 'MozillaPublicLicense2.0';
-//     licenseLink = 'https://choosealicense.com/licenses/mpl-2.0/'
-//   };
-//   if (licenseOption === 'The Unlicense') {
-//     licenseOption = 'The Unlicense';
-//     licenseLink = 'https://choosealicense.com/licenses/unlicense/'
-//   };
-// }

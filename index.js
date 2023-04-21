@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Please choose the appropriate license for this application.',
-        choices: ['Apache','Eclipse', 'ISC', 'MIT', 'Mozilla']
+        choices: ['Apache','Eclipse', 'ISC', 'MIT', 'Mozilla', 'None']
     },
     {
         type: 'input',
