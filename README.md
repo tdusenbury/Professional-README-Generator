@@ -53,10 +53,6 @@ TAMARA "T" DUSENBURY
 ```
     I am excited to take my knowledge of various industries into the virtual realm.
 
-    LinkedIn: Tamara Dusenbury
-    Portfolio: (https://tdusenbury.github.io/Tamara-Dusenbury-Portfolio/)
-    Github: (https://github.com/tdusenbury)
-
 
 
 ## Credits
