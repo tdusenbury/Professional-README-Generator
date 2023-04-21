@@ -3,16 +3,16 @@
 
 function renderLicenseBadge(license) { 
   if (license === "Apache") {
-    return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+    return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
   }
   else if (license === "Eclipse") {
-    return `![License](https://img.shields.io/badge/License-EPL_1.0-red.svg`
+    return `![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)`;
   }
   else if (license === "ISC") {
-    return `![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg`
+    return `![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)`;
   }
   else if (license === "MIT") {
-    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg`;
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
   } 
   else if (license === "Mozilla") {
     return `![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)`
@@ -23,7 +23,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license !== 'None') {
-    return `[License](#license)`
+    return `- [**License**](#license)`
   } else {
     return ""
   }
@@ -54,14 +54,17 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
   
 
-  ##Table of Contents
+  ## Table of Contents
 
-  [Description](#description)
-  [Installation](#installation)
-  [Usage](#usage)
-  [Contribution](#contribution)
-  [Test](#test)
-  [Questions](#questions)
+  - [**Description**](#description)
+  - [**Installation**](#installation)
+  - [**Usage**](#usage)
+  - [**Contribution**](#contribution)
+  - [**Test**](#test)
+  - [**Questions**](#questions)
+  
+
+
   ${renderLicenseLink(data.license)}
 
   ## Description
