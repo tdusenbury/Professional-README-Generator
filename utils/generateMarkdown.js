@@ -60,7 +60,7 @@ function generateMarkdown(data) {
   - [**Installation**](#installation)
   - [**Usage**](#usage)
   - [**Contribution**](#contribution)
-  - [**Test**](#test)
+  - [**Testing**](#testing)
   - [**Questions**](#questions)
   
 
